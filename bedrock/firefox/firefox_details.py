@@ -3,7 +3,7 @@
 import re
 from collections import OrderedDict
 from operator import itemgetter
-from urllib import urlencode
+from urllib.parse import urlencode
 
 from django.conf import settings
 
@@ -75,13 +75,13 @@ class FirefoxDesktop(_ProductDetails):
         """
         if classified:
             platforms = OrderedDict()
-            for k, v in self.platform_classification.iteritems():
+            for k, v in self.platform_classification.items():
                 for platform in v:
                     platforms[platform] = self.platform_labels[platform]
         else:
             platforms = self.platform_labels.copy()
 
-        return platforms.items()
+        return list(platforms.items())
 
     def latest_version(self, channel='release'):
         version = self.version_map.get(channel, 'LATEST_FIREFOX_VERSION')
@@ -160,7 +160,7 @@ class FirefoxDesktop(_ProductDetails):
         version = version or self.latest_version(channel)
 
         f_builds = []
-        for locale, build in builds.iteritems():
+        for locale, build in builds.items():
             if locale not in self.languages or not build.get(version):
                 continue
 
@@ -175,7 +175,7 @@ class FirefoxDesktop(_ProductDetails):
             if query is not None and not self._matches_query(build_info, query):
                 continue
 
-            for platform, label in self.platform_labels.iteritems():
+            for platform, label in self.platform_labels.items():
                 build_info['platforms'][platform] = {
                     'download_url': self.get_download_url(channel, version,
                                                           platform, locale,
@@ -377,10 +377,10 @@ class FirefoxAndroid(_ProductDetails):
         min_version = '4.0.3' if version_int < 56 else '4.1'
 
         # key is a bouncer platform name, value is the human-readable label
-        for arch, platform in self.platform_map.iteritems():
+        for arch, platform in self.platform_map.items():
             platforms[platform] = self.platform_labels[arch] % min_version
 
-        return platforms.items()
+        return list(platforms.items())
 
     def latest_version(self, channel):
         version = self.version_map.get(channel, 'version')
@@ -435,7 +435,7 @@ class FirefoxAndroid(_ProductDetails):
             if query is not None and not self._matches_query(build_info, query):
                 continue
 
-            for arch, platform in self.platform_map.iteritems():
+            for arch, platform in self.platform_map.items():
                 # x86 builds are not localized yet
                 if arch == 'x86' and locale not in ['multi', 'en-US']:
                     continue
