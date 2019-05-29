@@ -1392,6 +1392,7 @@ CSP_IMG_SRC = CSP_DEFAULT_SRC + [
     'adservice.google.de',
     'adservice.google.dk',
     'creativecommons.org',
+    'cdn-3.convertexperiments.com',  # convert A/B
 ]
 CSP_SCRIPT_SRC = CSP_DEFAULT_SRC + [
     # TODO fix things so that we don't need this
