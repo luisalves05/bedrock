@@ -8,6 +8,8 @@
 
 {% extends "firefox/base-protocol.html" %}
 
+{% block convert %}<script type="text/javascript" src="https://cdn-3.convertexperiments.com/js/10039-100317.js"></script>{% endblock %}
+
 {% block canonical_urls %}
   {# the SEM campaign page should set canonical to the /firefox/new/ page. #}
   <link rel="canonical" href="{{ settings.CANONICAL_URL }}/{{ LANG }}/firefox/new/">
