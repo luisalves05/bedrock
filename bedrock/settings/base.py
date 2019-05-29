@@ -1410,6 +1410,7 @@ CSP_SCRIPT_SRC = CSP_DEFAULT_SRC + [
 CSP_STYLE_SRC = CSP_DEFAULT_SRC + [
     # TODO fix things so that we don't need this
     "'unsafe-inline'",
+    'app.convert.com', # convert A/B
 ]
 CSP_CHILD_SRC = [
     'www.googletagmanager.com',
