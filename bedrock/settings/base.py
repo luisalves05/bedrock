@@ -1406,7 +1406,8 @@ CSP_SCRIPT_SRC = CSP_DEFAULT_SRC + [
     'www.youtube.com',
     's.ytimg.com',
     'cdn-3.convertexperiments.com',  # convert A/B
-    'app.convert.com', # convert A/B
+    'app.convert.com', # convert A/B,
+    '100317.track.convertexperiments.com', # convert A/B,
 ]
 CSP_STYLE_SRC = CSP_DEFAULT_SRC + [
     # TODO fix things so that we don't need this
