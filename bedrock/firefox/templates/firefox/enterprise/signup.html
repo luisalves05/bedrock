@@ -2,10 +2,10 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
-{% extends "base-pebbles-basic.html" %}
+{% extends "base-protocol-basic.html" %}
 
 {% block page_title_prefix %}{% endblock %}
-{% block page_title %}Request more information | Firefox Quantum for Enterprise{% endblock %}
+{% block page_title %}Request more information | Firefox Browser for Enterprise{% endblock %}
 {% block page_desc %}{% endblock %}
 
 {# "noindex" pages should not have the canonical or hreflang tags: bug 1442331 #}
@@ -15,20 +15,19 @@
   {{ css_bundle('firefox_enterprise') }}
 {% endblock %}
 
-{% block body_id %}firefox{% endblock %}
-{% block body_class %}{% endblock %}
+{% block body_id %}enterprise-signup{% endblock %}
+{% block body_class %}mzp-t-firefox{% endblock %}
 
 {% block site_header %}
 <header class="enterprise-head">
-  <div class="content">
+  <div class="mzp-l-content">
     {{ high_res_img('logos/firefox/logo-quantum.png', {'alt': 'Firefox', 'width': '50', 'height': '50', 'class': 'enterprise-logo'}) }}
-    <span class="enterprise-name"><strong>Firefox Quantum</strong> for Enterprise</span>
+    <span class="enterprise-name"><strong>Firefox Browser</strong> for Enterprise</span>
   </div>
 </header>
 {% endblock %}
 
 {% block article %}
-
   <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="enterprise-form">
     <h1>Request more information</h1>
     <p>Required fields are indicated with an <em>*</em>.</p>
@@ -392,7 +391,7 @@
       <input id="00N0B000006DrBb" name="00N0B000006DrBb" type="checkbox" value="1" required>
       <label for="00N0B000006DrBb">By signing up you agree to Mozilla communicating with you about Firefox Enterprise. We’ll treat your information as described in our <a href="{{ url('privacy.notices.websites') }}">Privacy Policy</a>. <em>*</em></label>
     </div>
-    <input type="submit" name="submit" class="button" value="Submit">
+    <input type="submit" name="submit" class="mzp-c-button mzp-t-product" value="Submit">
   </form>
 {% endblock %}
 

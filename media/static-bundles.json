@@ -435,6 +435,12 @@
     },
     {
       "files": [
+        "css/protocol/basic.scss"
+      ],
+      "name": "protocol-basic"
+    },
+    {
+      "files": [
         "css/etc/firefox/retention/thank-you.scss",
         "css/etc/firefox/retention/thank-you-referral.scss"
       ],
